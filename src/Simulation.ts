@@ -12,6 +12,7 @@ export default class Simulation extends EventEmitter implements ISimulation {
     public static readonly canvasSize = new Vector(500, 500);
     public readonly items: Set<Item>;
     private readonly canvas: HTMLCanvasElement;
+    private readonly mouseCoordinateDiv: HTMLDivElement;
     private lastDrawTimeInMs: number = 0;
     private timer: number = 0;
 
@@ -36,7 +37,11 @@ export default class Simulation extends EventEmitter implements ISimulation {
             throw new Error('Parent is unavailable');
         }
 
+        this.mouseCoordinateDiv = document.createElement('div');
+
         parent.appendChild(this.canvas);
+        parent.appendChild(this.mouseCoordinateDiv);
+
         this.setupCanvasEvents();
     }
 
@@ -45,7 +50,8 @@ export default class Simulation extends EventEmitter implements ISimulation {
             clearInterval(this.timer);
         }
 
-        this.timer = setInterval(() => this.draw(), millisecondsPerFrame);
+        // this.timer = setInterval(() => this.draw(), millisecondsPerFrame);
+        this.draw();
     }
 
     public stop() {
@@ -78,6 +84,9 @@ export default class Simulation extends EventEmitter implements ISimulation {
 
         const x = event.clientX - canvasRect.left;
         const y = event.clientY - canvasRect.top;
+
+        this.mouseCoordinateDiv.innerText = `(${x.toFixed(1)}, ${y.toFixed(1)})`;
+
 
         this.emit('mouseMove', {x, y});
     }

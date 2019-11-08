@@ -1,0 +1,31 @@
+{
+  "name": "canvas-simulation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "@arcticzeroo/duration": "^1.1.2",
+    "eventemitter2": "^5.0.1",
+    "random": "^2.1.1",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.6.4",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "devDependencies": {
+    "@types/random": "^2.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arcticzeroo/canvas-simulation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arcticzeroo/canvas-simulation/issues"
+  },
+  "homepage": "https://github.com/arcticzeroo/canvas-simulation#readme"
+}

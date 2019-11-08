@@ -6,7 +6,7 @@ export default class Vector {
     }
 
     subtract(other: Vector): Vector {
-        return new Vector(this.x - other.x, this.y + other.y);
+        return new Vector(this.x - other.x, this.y - other.y);
     }
 
     multiplyScalar(scalar: number): Vector {
