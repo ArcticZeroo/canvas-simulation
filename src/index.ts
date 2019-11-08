@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const limb = new Limb({
         simulation,
-        width: 75,
-        height: 300,
+        width: ((Math.random() * 40) + 50),
+        height: ((Math.random() * (Simulation.canvasSize.y - 200)) + 200),
         taper: ((Math.random() * 0.65) + 0.35),
         darkness: 0,
         colorVariance: 20,
